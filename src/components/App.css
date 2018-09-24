@@ -1,0 +1,70 @@
+/*@import url('https://fonts.googleapis.com/css?family=Merriweather');*/
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.content {
+  padding: 1em;
+}
+
+#chart_region_selection{
+  padding-top:2em;
+}
+.list-group {
+  color: white;
+
+}
+
+#myTab{
+
+
+  max-width: 100%;
+}
+body {
+  /*font-family: 'Merriweather', serif;*/
+  font-family: 'Lato', sans-serif;
+
+}
+.btn {
+  background-color: #2A568D;
+}
+.btn:hover {
+  background-color: white;
+  color: #2A568D;
+}
+.btn:active {
+  background-color: white;
+  color: #2A568D;
+}
+
+#button_centre {
+ margin-top: 100px;
+ margin-left: 300px;
+
+}
+
+#action_panel {
+  width: 100%;
+}
+
+#dropdownMenuLink {
+ background-color: #2A568D;
+}
+
+.list-group-item{
+
+  background-color: #2A568D;
+}
+.list-group-item:hover { 
+    background-color: white;
+    color: black;
+}
+.hidden{
+  background-color: white;
+  color: #2A568D;
+  display: none;
+}
+
+.fullsize {
+
+  width:100%
+
+}
