@@ -1,15 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import './App.css';
-import { Card, CardHeader, CardContent, Button } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
+import {Button} from 'react-bootstrap';
+import {Card,CardHeader} from 'reactstrap';
 import uniqueId from 'react-html-id';
-import DatePicker from 'react-datepicker';
-import { ifError } from 'assert';
+//import DatePicker from 'react-datepicker';
+//import { ifError } from 'assert';
 
 const styles = theme => ({
   root: {
@@ -92,8 +93,6 @@ class Highlights extends Component {
       })
 
   }
-
-
   componentDidMount() {
     this.getData();
   }
@@ -229,8 +228,17 @@ class Highlights extends Component {
     return (
       <div >
         <h4 className="text-center">Highlights of the week (Nationally)</h4>
-        <Button onClick={this.displayCases.bind(this)}>Click</Button>
-        <Button onClick={this.displayDeaths.bind(this)}>Click2</Button> 
+        <Card>
+          <CardHeader>
+            <div className="row">
+            <div className="col-4">
+                <Button bsSize="small" onClick={this.displayCases.bind(this)}>Click</Button>{' '}
+                <Button bsSize="small" onClick={this.displayDeaths.bind(this)}>Click2</Button> 
+            </div>
+            <div className="8"></div>
+            </div>
+          </CardHeader>
+        </Card><br/>
         
         <div>
           <Paper className={classes.root} elevation={1}>
@@ -241,8 +249,6 @@ class Highlights extends Component {
             </div>
           </Paper>
         </div>
-
-
       </div>
 
     )

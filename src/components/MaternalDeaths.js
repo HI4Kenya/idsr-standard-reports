@@ -71,8 +71,7 @@ return (
         </CardHeader>
     </Card>
     </div>
-    
-    {/* <Button>Excel</Button> */}
+
 <Col md={12}>
     <Table striped bordered condensed hover responsive id="maternal_deaths">
         <thead>
