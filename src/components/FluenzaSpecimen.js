@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
+import {Card,CardHeader} from 'reactstrap';
+import {Button} from 'react-bootstrap';
 import './App.css';
 
 var data = {
@@ -94,6 +96,20 @@ class FluenzaSpecimen extends Component {
         return (
             <div className="row">
             <h4>Fluenza Specimen</h4>
+            <div className="col-12">
+        <Card>
+            <CardHeader>
+            <div className="row">
+            <div className="col-8"></div>
+            <div className="col-4">
+            <Button bsStyle="success" bsSize="small">Export Pdf</Button>{' '}
+            <Button bsStyle="success" bsSize="small">PNG</Button>{' '}
+            </div>
+            
+            </div>
+            </CardHeader>
+        </Card>
+        </div>
                 <div className="col-12" id="disease_specific_chart">
                     <Bar data={data} className="fullsize"/>
                 </div>

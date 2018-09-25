@@ -1,9 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import ReactToExcel from 'react-html-table-to-excel';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
+import {Card,CardHeader} from 'reactstrap';
+import {Button} from 'react-bootstrap';
 import './App.css';
 var data = {
         labels: ["33", "38", "43", "48", "53", "58", "63","68","73"],
@@ -35,20 +38,10 @@ class MalariaCases extends Component {
         <Card>
             <CardHeader>
             <div className="row">
-            <div className="col-6"></div>
-            <div className="col-6">
+            <div className="col-8"></div>
+            <div className="col-4">
             <Button bsStyle="success" bsSize="small">Export Pdf</Button>{' '}
-            <Button bsStyle="success" bsSize="small">Export CSV</Button>{' '}
-            {/* <CsvDownloader
-            filename="csvFile"
-            text="Test"
-            /> */}
-            <ReactToExcel
-            table="maternal_deaths"
-            filename="excelFile"
-            sheet="sheet 1"
-            buttonText="Export Excel"
-            />
+            <Button bsStyle="success" bsSize="small">Export PNG</Button>{' '}
             </div>
             
             </div>
