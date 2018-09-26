@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
+import $ from 'jquery';
+import {saveAs} from 'file-saver';
 import {Chart} from 'chart.js';
 import {Card,CardHeader} from 'reactstrap';
 import {Button} from 'react-bootstrap';
@@ -24,6 +26,29 @@ var data = {
     data: [3, 10, 5, 2, 20],
   }]
 }
+var chart=<Bar data={data} className="fullsize" />;
+// chart.render();
+
+// var canvas = $("#canvas .canvasjs-chart-canvas").get(0);
+// var dataURL = canvas.toDataURL();
+// //console.log(dataURL);
+
+// $("#download-pdf").click(function(){
+//     var pdf = new jsPDF();
+//     pdf.addImage(dataURL, 'JPEG', 0, 0);
+//     pdf.save("download.pdf");
+// });
+
+                  // $("#download_png").click(function(){
+                  //   $("#canvas").get(0).toBlob(function(blob)
+                  //   {
+                  //     saveAs(blob,"chart_test")
+                  //   }
+                  //   );
+                  // });
+
+                  // var ctx= $("canvas").get(0).getContext("2d");
+                  // var mychart=new Chart(ctx).Bar(data);
 
 // var canvas = document.querySelector('#cool-canvas');
 // var context = canvas.getContext("2d");
@@ -57,14 +82,15 @@ class Specific extends Component {
             <div className="col-8"></div>
             <div className="col-4">
             <Button bsStyle="success" bsSize="small" id="download-pdf">Export Pdf</Button>{' '}
-            <Button bsStyle="success" bsSize="small">PNG</Button>{' '}
+            <Button bsStyle="success" bsSize="small" id="download_png">PNG</Button>{' '}
             </div>    
             </div>
             </CardHeader>
         </Card>
         </div>
-        <div className="col-12" id="cool-canvas">
-          <Bar data={data} className="fullsize" />
+        <div className="col-12" id="canvas">
+          {/* <Bar data={data} className="fullsize" /> */}
+          {chart}
         </div>
       </div>
     )
