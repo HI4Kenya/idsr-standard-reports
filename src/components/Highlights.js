@@ -187,15 +187,12 @@ class Highlights extends Component {
     //node list
     var deathElement = document.querySelectorAll('[id$="deathId"]');
 
-
-  
     for(var i=0; i<titles.length; i++){
       for(var j=0; j<deaths.length; j++){
         if(deaths[j][0].includes(titles[i])){
           // console.log(cases[j][0], " ", titles[i])
           newDeathArray.push([deaths[j], titles[i]])
         } } }
-
 
     for(var i=0; i<newDeathArray.length; i++){
       for(var j=0; j<deathElement.length; j++){
@@ -218,12 +215,9 @@ class Highlights extends Component {
      
   }
 
-
-
   render() {
     const classes = this.props;
     console.log(this.state.cases);
-
 
     return (
       <div >
