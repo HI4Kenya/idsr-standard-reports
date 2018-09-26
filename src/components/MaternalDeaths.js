@@ -5,6 +5,9 @@ import ReactToExcel from 'react-html-table-to-excel';
 import React, { Component } from 'react';
 import { Row, Col, Table,Card,CardHeader } from 'reactstrap';
 import {Grid,Button} from 'react-bootstrap';
+import {CSVLink} from 'react-csv';
+//import{CSVDownload} from 'react-csv';
+//import {CsvCreator} from 'react-csv-creator';
 import './App.css';
 
 class MaternalDeaths extends Component {
@@ -54,7 +57,13 @@ return (
         <div className="col-6"></div>
         <div className="col-6">
         <Button bsStyle="success" bsSize="small">Export Pdf</Button>{' '}
+        
+        <CSVLink
+        data={county}
+        >
         <Button bsStyle="success" bsSize="small">Export CSV</Button>{' '}
+        </CSVLink>
+        {/* <CsvCreator>test</CsvCreator> */}
         {/* <CsvDownloader
         filename="csvFile"
         text="Test"

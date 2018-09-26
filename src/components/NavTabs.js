@@ -10,6 +10,7 @@ import ReportingRate from './ReportingRate';
 import Trends from './Trends';
 import DiseaseSpecific from './DiseaseSpecific';
 import IdsrTable from './IdsrTable';
+import TestCsv from './TestCsv';
 // import FluenzaSpecimen from './FluenzaSpecimen';
 // import MalariaCases from './MalariaCases';
 // import MaternalDeaths from './MaternalDeaths';
@@ -63,7 +64,9 @@ class SimpleTabs extends React.Component {
         {value === 2 && <TabContainer><Trends/></TabContainer>}
         {value === 3 && <TabContainer><DiseaseSpecific/></TabContainer>}
         {value === 4 && <TabContainer><IdsrTable/></TabContainer>}
-        {value === 5 && <TabContainer>Full reports will be here</TabContainer>}
+        {value === 5 && <TabContainer>
+          <TestCsv/>
+        </TabContainer>}
       </div>
     );
   }

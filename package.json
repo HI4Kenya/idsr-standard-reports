@@ -16,6 +16,8 @@
     "react-axios": "^2.0.1",
     "react-bootstrap": "^0.32.4",
     "react-chartjs-2": "^2.7.4",
+    "react-csv": "^1.0.15-RC2",
+    "react-csv-creator": "^1.1.0",
     "react-datepicker": "^1.6.0",
     "react-dom": "^16.5.0",
     "react-html-table-to-excel": "^2.0.0",
