@@ -16,6 +16,11 @@ var data = {
       display: true,
       position: 'right'
     },
+    title:{
+      text:"testing",
+      display:true,
+      fontSize: 20,
+    },
     backgroundColor: '#FF00FF',
     // borderColor: 'rgb(255, 99, 132)',
     data: [4, 14, 12, 2, 1],

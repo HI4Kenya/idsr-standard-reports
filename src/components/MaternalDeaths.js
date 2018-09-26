@@ -81,7 +81,7 @@ return (
     </Card>
     </div>
 
-<Col md={12}>
+<Col md={12} align="left">
     <Table striped bordered condensed hover responsive id="maternal_deaths">
         <thead>
             <tr>
