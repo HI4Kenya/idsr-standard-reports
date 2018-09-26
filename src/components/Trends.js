@@ -28,12 +28,11 @@ class Trends extends Component {
     return (
       <div className="row">
         <div className="col-10" id="chart_section">
-            <Form>
+          <Form>
           <FormGroup>
               <Row>
                   <Col md={5}>
                   <select class="selectpicker form-control input-place"  name="select_option" id="disease" onChange="setCode(this)" required>
-                  {/* multiple data-live-search="true" */}
                   <option value="">Select Region</option>
                   <option value="44">Central</option>
                   <option value="55">Coast</option>
@@ -51,12 +50,9 @@ class Trends extends Component {
                   </Col>
                   <Col md={2}>
                   <Button>Generate Chart</Button>
-                  </Col>
-                  
+                  </Col>    
               </Row>
-              
-          </FormGroup>
-          
+          </FormGroup>     
       </Form>
           <Line data={data} className="fullsize" />
         </div>

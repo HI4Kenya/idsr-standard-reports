@@ -1,0 +1,232 @@
+[
+    {
+        "id": 1,
+        "regionName": "North Rift Economic Bloc",
+        "counties": [
+            {
+                "id": "kphDeKClFch",
+                "displayName": "Turkana County"
+            },
+            {
+                "id": "o36zCRjSd4G",
+                "displayName": "Samburu County"
+            },
+            {
+                "id": "vvOK1BxTbet",
+                "displayName": "Baringo County"
+            },
+            {
+                "id": "XWALbfAPa6n",
+                "displayName": "West Pokot County"
+            },
+            {
+                "id": "mThvosEflAU",
+                "displayName": "Trans-Nzoia County"
+            },
+            {
+                "id": "pZqQRRW7PHP",
+                "displayName": "Uasin Gishu County"
+            },
+            {
+                "id": "MqnLxQBigG0",
+                "displayName": "Elgeyo-Marakwet County"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "regionName": "Lake Region Economic Bloc",
+        "counties": [
+            {
+                "id": "HMNARUV2CW4",
+                "displayName": "Bomet County"
+            },
+            {
+                "id": "KGHhQ5GLd4k",
+                "displayName": "Bungoma County"
+            },
+            {
+                "id": "Tvf1zgVZ0K4",
+                "displayName": "Busia County"
+            },
+            {
+                "id": "nK0A12Q7MvS",
+                "displayName": "Homa Bay County"
+            },
+            {
+                "id": "BjC1xL40gHo",
+                "displayName": "Kakamega County"
+            },
+            {
+                "id": "ihZsJ8alvtb",
+                "displayName": "Kericho County"
+            },
+            {
+                "id": "sPkRcDvhGWA",
+                "displayName": "Kisii County"
+            },
+            {
+                "id": "tAbBVBbueqD",
+                "displayName": "Kisumu County"
+            },
+            {
+                "id": "fVra3Pwta0Q",
+                "displayName": "Migori County"
+            },
+            {
+                "id": "t0J75eHKxz5",
+                "displayName": "Nandi County"
+            },
+            {
+                "id": "uepLTG8wGWJ",
+                "displayName": "Nyamira County"
+            },
+            {
+                "id": "u4t9H8XyU9P",
+                "displayName": "Siaya County"
+            },
+            {
+                "id": "sANMZ3lpqGs",
+                "displayName": "Vihiga County"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "regionName": "Frontier Counties Development Council",
+        "counties": [
+            {
+                "id": "R6f9znhg37c",
+                "displayName": "Mandera County"
+            },
+            {
+                "id": "Eey8fT4Im3y",
+                "displayName": "Marsabit County"
+            },
+            {
+                "id": "CeLsrJOH0g9",
+                "displayName": "Wajir County"
+            },
+            {
+                "id": "uyOrcHZBpW0",
+                "displayName": "Garissa County"
+            },
+            {
+                "id": "bzOfj0iwfDH",
+                "displayName": "Isiolo County"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "regionName": "Mt. Kenya & Aberdare",
+        "counties": [
+            {
+                "id": "xuFdFy6t9AH",
+                "displayName": "Laikipia County"
+            },
+            {
+                "id": "T4urHM47nlm",
+                "displayName": "Tharaka Nithi County"
+            },
+            {
+                "id": "Y52XNJ50hYb",
+                "displayName": "Meru County"
+            },
+            {
+                "id": "PFu8alU2KWG",
+                "displayName": "Embu County"
+            },
+            {
+                "id": "Ulj33KBau7V",
+                "displayName": "Kirinyaga County"
+            },
+            {
+                "id": "mYZacFNIB3h",
+                "displayName": "Nyandarua County"
+            },
+            {
+                "id": "ptWVfaCIdVx",
+                "displayName": "Nyeri County"
+            },
+            {
+                "id": "ob6SxuRcqU4",
+                "displayName": "Nakuru County"
+            },
+            {
+                "id": "qKzosKQPl6G",
+                "displayName": "Kiambu County"
+            },
+            {
+                "id": "ahwTMNAJvrL",
+                "displayName": "Muranga County"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "regionName": "South Eastern Kenya Economic Bloc",
+        "counties": [
+            {
+                "id": "yhCUgGcCcOo",
+                "displayName": "Machakos County"
+            },
+            {
+                "id": "BoDytkJQ4Qi",
+                "displayName": "Makueni County"
+            },
+            {
+                "id": "j8o6iO4Njsi",
+                "displayName": "Kitui County"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "regionName": "Jumuiya ya Kaunti za Pwani",
+        "counties": [
+            {
+                "id": "nrI2khZx3d0",
+                "displayName": "Kilifi County"
+            },
+            {
+                "id": "N7YETT3A9r1",
+                "displayName": "Kwale County"
+            },
+            {
+                "id": "wsBsC6gjHvn",
+                "displayName": "Mombasa County"
+            },
+            {
+                "id": "QyGNX2DpR4h",
+                "displayName": "Taita Taveta County"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "regionName": "Other Regions",
+        "counties": [
+            {
+                "id": "Hsk1YV8kHkT",
+                "displayName": "Kajiado County"
+            },
+            {
+                "id": "NjWSbQTwys4",
+                "displayName": "Lamu County"
+            },
+            {
+                "id": "jkG3zaihdSs",
+                "displayName": "Nairobi County"
+            },
+            {
+                "id": "kqJ83J2D72s",
+                "displayName": "Narok County"
+            },
+            {
+                "id": "JsH2bnvNt2d",
+                "displayName": "Tana River County"
+            }
+        ]
+    }
+]

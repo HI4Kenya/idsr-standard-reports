@@ -2,6 +2,7 @@ import React from 'react';
 import {Line as LineChart} from 'react-chartjs-2';
 import { Row, Col } from 'react-bootstrap';
 import { Button, Form, FormGroup,Card,CardHeader } from 'reactstrap';
+import TrendsForm from './TrendsForm';
 // import { Card } from 'material-ui';
 // import { CardHeader } from '@material-ui/core';
 const  axios = require('axios')
@@ -547,12 +548,12 @@ console.log(Wajir)
    return (
      <div>
        <div className="col-10" id="chart_section">
-            <Form>
+       <TrendsForm/>
+            {/* <Form>
           <FormGroup>
               <Row>
                   <Col md={5}>
                   <select class="selectpicker form-control input-place"  name="select_option" id="disease" onChange="setCode(this)" required>
-                  {/* multiple data-live-search="true" */}
                   <option value="">Select Region</option>
                   <option value="44">Central</option>
                   <option value="55">Coast</option>
@@ -570,13 +571,11 @@ console.log(Wajir)
                   </Col>
                   <Col md={2}>
                   <Button>Generate Chart</Button>
-                  </Col>
-                  
-              </Row>
-              
+                  </Col>                
+              </Row>        
           </FormGroup>
-          
-      </Form></div>
+      </Form> */}
+      </div>
       <div className="row">
       <div className="col-12">
       <Card>
