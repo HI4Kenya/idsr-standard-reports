@@ -103,7 +103,7 @@ class Highlights extends Component {
     return (
       titles.map((title) =>
         (
-          <div className="col-md-6">
+          <div className="col-md-6" align="left">
             <div className="columnHeadings">
               <Typography variant="title" gutterBottom style={{ backgroundColor: '#C455C5' }} key={this.nextUniqueId}>
                 {title}

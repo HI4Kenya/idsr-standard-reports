@@ -12,8 +12,8 @@ const csvData =[
 class TestCsv extends Component {
   render() {
     return (
-      <div className="row">    
-<CSVLink data={csvData} >Download me</CSVLink>
+      <div className="row">
+      <CSVLink data={csvData} >Download me</CSVLink>    
       </div>
     )
   }

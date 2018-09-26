@@ -68,10 +68,11 @@ class Dashboard extends Component{
                 <div className={classes.toolbar} />
                 <Typography >
                     <div className="row">
-                        <div className="col-12">
-                        <Link to="MainPage">Next</Link>
+                        <div className="col-12" align="left">
+                        
                         <Card>
                             <CardHeader>
+                            <Link to="MainPage">Next</Link>
                                 {/* <Button>Update</Button> */}
                             </CardHeader>
                         </Card>                    
