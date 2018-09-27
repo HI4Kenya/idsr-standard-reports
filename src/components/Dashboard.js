@@ -9,6 +9,7 @@ import './App.css';
 import {Link} from 'react-router-dom';
 import NavTabs from './NavTabs';
 
+
 const drawerWidth = 0;
 
 const styles = theme => ({
@@ -39,14 +40,25 @@ const styles = theme => ({
 });
 
 class Dashboard extends Component{
-    showAlert(){
-        alert("testing");
-        // <SpecificWeekReport/>
+    constructor(props){
+        super(props)
+        this.state={choice:""}
     }
-    handleChange(){
-    console.log("testing");
+    // showAlert(){
+    //     alert("testing");
+    // }
+    handleChange(event){
+        //console.log("testing");
+        var selected_week=event.target.value;
+        this.setState({choice:selected_week})
+        
     }
     render(){
+        let selection=this.state.choice;
+        if(selection){
+            //console.log(selection);
+            selection=<NavTabs period={this.state.choice}/>; 
+        }
         const { classes } = this.props;
         return(
             <div className={classes.root}>
@@ -57,16 +69,16 @@ class Dashboard extends Component{
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer
+            {/* <Drawer
                 variant="permanent"
                 classes={{
                     paper: classes.drawerPaper,
                 }}   
             >
                 <div className={classes.toolbar} />
-                {/* <SideBar/> */}
+                <SideBar/>
                 <Divider />
-            </Drawer>
+            </Drawer> */}
             <main className={classes.content}>
                 <div className={classes.toolbar} />
                 <Typography >
@@ -75,8 +87,7 @@ class Dashboard extends Component{
                         
                         <Card>
                             <CardHeader>
-                            <Link to="MainPage">Next</Link>
-                                {/* <Button>Update</Button> */}
+                            <Link to="Home"><Button>Back</Button></Link>
                             </CardHeader>
                         </Card>                    
                         </div>
@@ -92,7 +103,7 @@ class Dashboard extends Component{
                              <FormGroup>
                                 <div className="row">
                                    <div className="col-8">
-                                   <select className="form-control" name="wk" onChange={this.handleChange} required>
+                                   <select className="form-control" id="test" name="wk" onChange={this.handleChange.bind(this)} required>
                                         <option value="">Select Week</option>
                                         <option value="2017W33">2017W33</option>
                                         <option value="2017W34">2017W34</option>
@@ -101,7 +112,7 @@ class Dashboard extends Component{
                                    </select>
                                    </div> 
                                    <div className="col-4">
-                                   <Button name="report" onClick={this.showAlert}>Get Report</Button>
+                                   {/* <Button name="report" onClick={this.showAlert}>Get Report</Button> */}
                                    </div>
                                 </div>
                              </FormGroup>
@@ -115,7 +126,7 @@ class Dashboard extends Component{
 
                     <div className="row">
                     <div className="col-12">
-                   <NavTabs/>
+                   {selection}
                     </div>
                     </div>
                 </Typography>

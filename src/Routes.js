@@ -9,6 +9,7 @@ import Dashboard from "./components/Dashboard";
 export default () =>
   <Switch>
       <Route path="/" exact component={Home} />
+      <Route path="/Home" exact component={Home} />
     <Route path="/MainPage" exact component={MainPage} />
     <Route path="/Dashboard" exact component={Dashboard} />
 

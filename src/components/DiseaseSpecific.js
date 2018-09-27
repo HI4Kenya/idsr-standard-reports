@@ -10,7 +10,7 @@ import MaternalDeaths from './MaternalDeaths';
 class DiseaseSpecific extends Component {
   constructor(props){
     super(props);
-    this.state={choice:"1"}
+    this.state={choice:""}
 
   }
     //constructor with state to hold current choice

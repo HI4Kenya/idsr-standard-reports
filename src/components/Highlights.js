@@ -49,7 +49,7 @@ class Highlights extends Component {
   getData() {
     axios({
       method: 'get',
-      url: 'https://hiskenya.org/api/analytics.json?dimension=dx:AoNid8qa4iP;duEwnPpZTeJ;YrVngLCNhCN;IPzqbhBXzYI;QcCSmjw0E1t;mdLORcOXNVC;XUmIT8vmtB8;SvGX6aqR44S;VIbr1Dhv7Zt;RLzaFBwaWFN;mxWEOiayWem;MqEYVvHFn4C;aoDMYH6STyu;rNvGKtwbte6;k99fKerg18p;aS7l3UKgTEL;ZpEL8teGmpy;SvFYd0EZdF1;hInp9Yu39ap;DyCmCMGhcaT;aqtAtDtbywp;vqyFNp0Tyjj;cILf2i4484b;Iq9dK8PQGks;ODPXXGbNVz3;iZa8X0R8DC2;MjpTjUPSLY6;pxZwZGa3S79;rQT7Z4eJmQp;Uaezmz9SzNy;hUIVHkS4Zt4;o6UNt4eaw0C;WNovNDcvhHl;QMk6rJZtBT9;ntWgkwXCFp2;bZNWTQiGyPx;dwFMOqpWdJw;rl6ivYvMVKJ;WnKnWVYZ6eX;WQNqVsRWbje;FL1TjrtvExn;piQnwzWtwea;SpdUqIVx8ik;lVdrgTPxzHO;eCcSxVr5BYD;NEuSmgwbwzR;vzVMT5xJLQR;SIKZR5L29QV;kUMdI6Ip4rm;DHf4qRMuNVZ&dimension=pe:2018W33&filter=ou:HfVjCurKxh2&displayProperty=NAME&outputIdScheme=NAME',
+      url: 'https://hiskenya.org/api/analytics.json?dimension=dx:AoNid8qa4iP;duEwnPpZTeJ;YrVngLCNhCN;IPzqbhBXzYI;QcCSmjw0E1t;mdLORcOXNVC;XUmIT8vmtB8;SvGX6aqR44S;VIbr1Dhv7Zt;RLzaFBwaWFN;mxWEOiayWem;MqEYVvHFn4C;aoDMYH6STyu;rNvGKtwbte6;k99fKerg18p;aS7l3UKgTEL;ZpEL8teGmpy;SvFYd0EZdF1;hInp9Yu39ap;DyCmCMGhcaT;aqtAtDtbywp;vqyFNp0Tyjj;cILf2i4484b;Iq9dK8PQGks;ODPXXGbNVz3;iZa8X0R8DC2;MjpTjUPSLY6;pxZwZGa3S79;rQT7Z4eJmQp;Uaezmz9SzNy;hUIVHkS4Zt4;o6UNt4eaw0C;WNovNDcvhHl;QMk6rJZtBT9;ntWgkwXCFp2;bZNWTQiGyPx;dwFMOqpWdJw;rl6ivYvMVKJ;WnKnWVYZ6eX;WQNqVsRWbje;FL1TjrtvExn;piQnwzWtwea;SpdUqIVx8ik;lVdrgTPxzHO;eCcSxVr5BYD;NEuSmgwbwzR;vzVMT5xJLQR;SIKZR5L29QV;kUMdI6Ip4rm;DHf4qRMuNVZ&filter=ou:HfVjCurKxh2&displayProperty=NAME&outputIdScheme=NAME&dimension=pe:'+this.props.period,
       auth: {
         username: 'hi4kenya2018',
         password: 'Kenya#2018',
@@ -95,6 +95,12 @@ class Highlights extends Component {
   }
   componentDidMount() {
     this.getData();
+    
+  }
+
+  componentDidUpdate(){
+    this.displayCases();
+    this.displayDeaths();
   }
 
   columns() {
@@ -226,8 +232,8 @@ class Highlights extends Component {
           <CardHeader>
             <div className="row">
             <div className="col-4">
-                <Button bsSize="small" onClick={this.displayCases.bind(this)}>Click</Button>{' '}
-                <Button bsSize="small" onClick={this.displayDeaths.bind(this)}>Click2</Button> 
+                {/* <Button bsSize="small" onClick={this.displayCases.bind(this)}>Click</Button>{' '} */}
+                {/* <Button bsSize="small" onClick={this.displayDeaths.bind(this)}>Click2</Button>  */}
             </div>
             <div className="8"></div>
             </div>
@@ -236,10 +242,9 @@ class Highlights extends Component {
         
         <div>
           <Paper className={classes.root} elevation={1}>
-
             <div className="row">
               {this.columns()}
-
+              {/* {this.displayCases()} */}
             </div>
           </Paper>
         </div>

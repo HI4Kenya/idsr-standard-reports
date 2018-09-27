@@ -6,16 +6,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Highlights from './Highlights';
-// import ReportingRate from './ReportingRate';
-// import Trends from './Trends';
 import DiseaseSpecific from './DiseaseSpecific';
 import IdsrTable from './IdsrTable';
 import TestCsv from './TestCsv';
 import App3 from './App3';
 import Rates from './Rates';
-// import FluenzaSpecimen from './FluenzaSpecimen';
-// import MalariaCases from './MalariaCases';
-// import MaternalDeaths from './MaternalDeaths';
 
 function TabContainer(props) {
   return (
@@ -61,8 +56,8 @@ class SimpleTabs extends React.Component {
             <Tab id="full_report" label="Full Report"/>
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer><Highlights/></TabContainer>}
-        {value === 1 && <TabContainer><Rates/></TabContainer>}
+        {value === 0 && <TabContainer><Highlights period={this.props.period}/></TabContainer>}
+        {value === 1 && <TabContainer><Rates src={"../sb.html?period="+this.props.period}/></TabContainer>}
         {value === 2 && <TabContainer><App3/></TabContainer>}
         {value === 3 && <TabContainer><DiseaseSpecific/></TabContainer>}
         {value === 4 && <TabContainer><IdsrTable/></TabContainer>}

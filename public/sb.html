@@ -1,159 +1,56 @@
 <!--?xml version="1.0" encoding="utf-8"?--><meta content="application/xhtml+xml; charset=utf-8" http-equiv="Content-Type" />
 <title></title>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script><!-- Excel & pdf Download plugin --><script type="text/javascript">
-
-!function(a,b,c,d){function e(b,c){this.element=b,this.settings=a.extend({},h,c),this._defaults=h,this._name=g,this.init()}function f(a){return(a.filename?a.filename:"table2excel")+(a.fileext?a.fileext:".xlsx")}var g="table2excel",h={exclude:".noExl",name:"Table2Excel"};e.prototype={init:function(){var b=this,c='<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';b.template={head:'<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">'+c+"<head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets>",sheet:{head:"<x:ExcelWorksheet><x:Name>",tail:"</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet>"},mid:"</x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>",table:{head:"<table>",tail:"</table>"},foot:"</body></html>"},b.tableRows=[],a(b.element).each(function(c,d){var e="";a(d).find("tr").not(b.settings.exclude).each(function(b,c){e+="<tr>"+a(c).html()+"</tr>"}),b.tableRows.push(e)}),b.tableToExcel(b.tableRows,b.settings.name,b.settings.sheetName)},tableToExcel:function(d,e,g){var h,i,j,k=this,l="";if(k.uri="data:application/vnd.ms-excel;base64,",k.base64=function(a){return b.btoa(unescape(encodeURIComponent(a)))},k.format=function(a,b){return a.replace(/{(\w+)}/g,function(a,c){return b[c]})},g="undefined"==typeof g?"Sheet":g,k.ctx={worksheet:e||"Worksheet",table:d,sheetName:g},l=k.template.head,a.isArray(d))for(h in d)l+=k.template.sheet.head+g+h+k.template.sheet.tail;if(l+=k.template.mid,a.isArray(d))for(h in d)l+=k.template.table.head+"{table"+h+"}"+k.template.table.tail;l+=k.template.foot;for(h in d)k.ctx["table"+h]=d[h];if(delete k.ctx.table,"undefined"!=typeof msie&&msie>0||navigator.userAgent.match(/Trident.*rv\:11\./))if("undefined"!=typeof Blob){l=[l];var m=new Blob(l,{type:"text/html"});b.navigator.msSaveBlob(m,f(k.settings))}else txtArea1.document.open("text/html","replace"),txtArea1.document.write(k.format(l,k.ctx)),txtArea1.document.close(),txtArea1.focus(),sa=txtArea1.document.execCommand("SaveAs",!0,f(k.settings));else i=k.uri+k.base64(k.format(l,k.ctx)),j=c.createElement("a"),j.download=f(k.settings),j.href=i,c.body.appendChild(j),j.click(),c.body.removeChild(j);return!0}},a.fn[g]=function(b){var c=this;return c.each(function(){a.data(c,"plugin_"+g)||a.data(c,"plugin_"+g,new e(this,b))}),c}}(jQuery,window,document);
-</script>
-
-<script>
-
-
-      $(document).ready(function() {
-      		var params = location.href.split('?')[1];
-			var period = params.split('=')[1];
-			console.log(period)
-          //var temperiod = dhis2.report.periods;
-		  // var temperiod = period;
-		  var temperiod = period
-          temperiod = temperiod.toString();
-          if (temperiod.length == 7) {
-              var post = Number(temperiod.substring((temperiod.length - 2)));
-              var period = temperiod.substring(0, (temperiod.length - 2)) + '' + post;
-          } else {
-              var post = Number(temperiod.substring((temperiod.length - 1)));
-              var period = temperiod.substring(0, (temperiod.length - 1)) + '' + post;
-          }
-          //document.getElementById("week1").innerHTML = post;
-          document.getElementById("week2").innerHTML = post;
-		  //document.getElementById("year1").innerHTML = temperiod.substring(0,4);
-		  document.getElementById("year2").innerHTML = temperiod.substring(0,4);
-		  //national(period);
-		  //provinces(period);
-		   
- 
-          var orgunits = [
-							['Mombasa','wsBsC6gjHvn','6'],
-							['Wajir','CeLsrJOH0g9','6'],
-							['Embu','PFu8alU2KWG','4'],
-							['Kisii','sPkRcDvhGWA','9'],
-							['Nyeri','ptWVfaCIdVx','8'],
-							['Mandera','R6f9znhg37c','6'],
-							['TharakaNithi','T4urHM47nlm','4'],
-							['Makueni','BoDytkJQ4Qi','6'],
-							['Meru','Y52XNJ50hYb','9'],
-							['Kericho','ihZsJ8alvtb','7'],
-							['Kisumu','tAbBVBbueqD','6'],
-							['Isiolo','bzOfj0iwfDH','3'],
-							['Kwale','N7YETT3A9r1','4'],
-							['Kirinyaga','Ulj33KBau7V','5'],
-							['Bungoma','KGHhQ5GLd4k','10'],
-							['Kitui','j8o6iO4Njsi','8'],
-							['UasinGishu','pZqQRRW7PHP','6'],
-							['Siaya','u4t9H8XyU9P','7'],
-							['Kajiado','Hsk1YV8kHkT','5'],
-							['WestPokot','XWALbfAPa6n','4'],
-							['Baringo','vvOK1BxTbet','6'],
-							['Kilifi','nrI2khZx3d0','7'],
-							['Narok','kqJ83J2D72s','6'],
-							['Nandi','t0J75eHKxz5','6'],
-							['Lamu','NjWSbQTwys4','2'],
-							['Bomet','HMNARUV2CW4','5'],
-							['Busia','Tvf1zgVZ0K4','7'],
-							['Migori','fVra3Pwta0Q','8'],
-							['Garissa','uyOrcHZBpW0','7'],
-							['Nyamira','uepLTG8wGWJ','6'],
-							['Kiambu','qKzosKQPl6G','12'],
-							['Marsabit','Eey8fT4Im3y','4'],
-							['HomaBay','nK0A12Q7MvS','8'],
-							['Vihiga','sANMZ3lpqGs','5'],
-							['Laikipia','xuFdFy6t9AH','5'],
-							['Nyandarua','mYZacFNIB3h','5'],
-							['Samburu','o36zCRjSd4G','3'],
-							['Muranga','ahwTMNAJvrL','8'],
-							['Elgeyo-Marakwet','MqnLxQBigG0','4'],
-							['Machakos','yhCUgGcCcOo','8'],
-							['Nakuru','ob6SxuRcqU4','11'],
-							['Nairobi','jkG3zaihdSs','17'],
-							['Kakamega','BjC1xL40gHo','12'],
-							['Turkana','kphDeKClFch','8'],
-							['TanaRiver','JsH2bnvNt2d','3'],
-							['Trans-Nzoia','mThvosEflAU','5'],
-							['TaitaTaveta','QyGNX2DpR4h','4']	  		  
-						];
-
-          var a = 0;
-          for (var y = 0; y < orgunits.length; y++) {
-			 var reporting=0;
-			 var timeliness=0;
-			 var weight=0;
-			 var reportrate=0;
-			 var compleness=0;
-              jQuery.ajax({
-                  url: 'https://hiskenya.org/api/analytics.json?dimension=dx:zJrL4HQqYmD.REPORTING_RATE&dimension=pe:' + period + '&dimension=ou:LEVEL-3;LEVEL-2;'+orgunits[a][1],
-                  type: 'GET',
-                  async: false,
-                  beforeSend: function(xhr) {
-                      //alert('sendingvalue');
-					   xhr.setRequestHeader('Authorization', 'Basic ' + btoa('hi4kenya2018:Kenya#2018'));
-                  },
-                  success: function(response) {
-                      if (response.rows.length != 0) {
-						  for (var t = 0; t < response.rows.length; t++) {
-							if(Math.round(response.rows[t][3])!=0){
-								//reporting=reporting+1;
-								if( response.rows[t][2]+'.REPORTING_RATE'==orgunits[a][1]+'.REPORTING_RATE'){
-									reportrate=Math.round(response.rows[t][3]);
-								}else{
-									reporting=reporting+1;
-								}
-								
-							}
-						  }
-						   
-						if(document.getElementById(orgunits[a][1]+'.reporting')){
-							if(Math.round((reporting/Math.round(orgunits[a][2]))*100)<80){
-                              for (var i = 0; i < document.getElementsByName(orgunits[a][1]).length; i++) {
-                                  document.getElementsByName(orgunits[a][1])[i].style.backgroundColor='#551a8b';
-                              }								
-							}else if(reportrate<60){
-                              for (var i = 0; i < document.getElementsByName(orgunits[a][1]).length; i++) {
-                                  document.getElementsByName(orgunits[a][1])[i].style.backgroundColor='#551a8b';
-                              }							
-							}
-							document.getElementById(orgunits[a][1]+'.weight').innerHTML =Math.round((Math.round((reporting/Math.round(orgunits[a][2]))*100)+(reportrate*3)+100)/6);
-							document.getElementById(orgunits[a][1]+'.completeness').innerHTML =100;
-							document.getElementById(orgunits[a][1]+'.REPORTING_RATE').innerHTML =reportrate;
-							document.getElementById(orgunits[a][1]+'.reporting').innerHTML =reporting;
-							document.getElementById(orgunits[a][1]+'.complete').innerHTML =reporting;
-							document.getElementById(orgunits[a][1]+'.timeliness').innerHTML = Math.round((reporting/Math.round(orgunits[a][2]))*100);
-							console.log(orgunits[a][1])	
-													
-						
-						}
-						
-                      } else {
-					  
-                      }
-                      //console.log(response);
-                      //alert(JSON.stringify(response));
-   
-                  }
-              });
-              a++;
-          }
-      });
-   // ]]>
-</script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script><!-- Excel & pdf Download plugin -->
 <style type="text/css">body{ font-family:'Times New Roman'; font-size:1em; }
 ul, ol{ margin-top: 0; margin-bottom: 0; }
 .Normal{text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:107.916664%;margin-top:0pt;margin-bottom:8pt;font-family:Calibri;font-size:14pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;}
 .Default-Paragraph-Font{font-family:Calibri;font-size:14pt;text-transform:none;font-weight:normal;font-style:normal;font-variant:normal;}
 .Normal-Table{}
 .No-List{}
+/*spinner*/
+
+
+  .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: blue transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 </style>
 <div class="Section0">
-<div><!-- <button class="btn btn-primary" id="btn_download">Download as Excel</button> -->
+<div><div id="spinner" class="lds-ring"><div></div><div></div><div></div><div></div></div>
 <p>&nbsp;</p>
+
 
 <table cellspacing="0" class="table1" id="table1" style="width:500px; border-collapse: collapse; ">
 	<tbody>
@@ -1901,3 +1798,144 @@ ul, ol{ margin-top: 0; margin-bottom: 0; }
 
 <p style="text-align:left;page-break-inside:auto;page-break-after:auto;page-break-before:avoid;line-height:107.916664%;margin-top:0pt;margin-bottom:8pt;">&nbsp;</p>
 </div>
+
+<script>
+
+
+      $(document).ready(function() {
+      		var params = location.href.split('?')[1];
+			var period = params.split('=')[1];
+			console.log(period)
+          //var temperiod = dhis2.report.periods;
+		  // var temperiod = period;
+		  var temperiod = period
+          temperiod = temperiod.toString();
+          if (temperiod.length == 7) {
+              var post = Number(temperiod.substring((temperiod.length - 2)));
+              var period = temperiod.substring(0, (temperiod.length - 2)) + '' + post;
+          } else {
+              var post = Number(temperiod.substring((temperiod.length - 1)));
+              var period = temperiod.substring(0, (temperiod.length - 1)) + '' + post;
+          }
+          //document.getElementById("week1").innerHTML = post;
+          document.getElementById("week2").innerHTML = post;
+		  //document.getElementById("year1").innerHTML = temperiod.substring(0,4);
+		  document.getElementById("year2").innerHTML = temperiod.substring(0,4);
+		  //national(period);
+		  //provinces(period);
+		   
+ 
+          var orgunits = [
+							['Mombasa','wsBsC6gjHvn','6'],
+							['Wajir','CeLsrJOH0g9','6'],
+							['Embu','PFu8alU2KWG','4'],
+							['Kisii','sPkRcDvhGWA','9'],
+							['Nyeri','ptWVfaCIdVx','8'],
+							['Mandera','R6f9znhg37c','6'],
+							['TharakaNithi','T4urHM47nlm','4'],
+							['Makueni','BoDytkJQ4Qi','6'],
+							['Meru','Y52XNJ50hYb','9'],
+							['Kericho','ihZsJ8alvtb','7'],
+							['Kisumu','tAbBVBbueqD','6'],
+							['Isiolo','bzOfj0iwfDH','3'],
+							['Kwale','N7YETT3A9r1','4'],
+							['Kirinyaga','Ulj33KBau7V','5'],
+							['Bungoma','KGHhQ5GLd4k','10'],
+							['Kitui','j8o6iO4Njsi','8'],
+							['UasinGishu','pZqQRRW7PHP','6'],
+							['Siaya','u4t9H8XyU9P','7'],
+							['Kajiado','Hsk1YV8kHkT','5'],
+							['WestPokot','XWALbfAPa6n','4'],
+							['Baringo','vvOK1BxTbet','6'],
+							['Kilifi','nrI2khZx3d0','7'],
+							['Narok','kqJ83J2D72s','6'],
+							['Nandi','t0J75eHKxz5','6'],
+							['Lamu','NjWSbQTwys4','2'],
+							['Bomet','HMNARUV2CW4','5'],
+							['Busia','Tvf1zgVZ0K4','7'],
+							['Migori','fVra3Pwta0Q','8'],
+							['Garissa','uyOrcHZBpW0','7'],
+							['Nyamira','uepLTG8wGWJ','6'],
+							['Kiambu','qKzosKQPl6G','12'],
+							['Marsabit','Eey8fT4Im3y','4'],
+							['HomaBay','nK0A12Q7MvS','8'],
+							['Vihiga','sANMZ3lpqGs','5'],
+							['Laikipia','xuFdFy6t9AH','5'],
+							['Nyandarua','mYZacFNIB3h','5'],
+							['Samburu','o36zCRjSd4G','3'],
+							['Muranga','ahwTMNAJvrL','8'],
+							['Elgeyo-Marakwet','MqnLxQBigG0','4'],
+							['Machakos','yhCUgGcCcOo','8'],
+							['Nakuru','ob6SxuRcqU4','11'],
+							['Nairobi','jkG3zaihdSs','17'],
+							['Kakamega','BjC1xL40gHo','12'],
+							['Turkana','kphDeKClFch','8'],
+							['TanaRiver','JsH2bnvNt2d','3'],
+							['Trans-Nzoia','mThvosEflAU','5'],
+							['TaitaTaveta','QyGNX2DpR4h','4']	  		  
+						];
+
+          var a = 0;
+          for (var y = 0; y < orgunits.length; y++) {
+			 var reporting=0;
+			 var timeliness=0;
+			 var weight=0;
+			 var reportrate=0;
+			 var compleness=0;
+              jQuery.ajax({
+                  url: 'https://hiskenya.org/api/analytics.json?dimension=dx:zJrL4HQqYmD.REPORTING_RATE&dimension=pe:' + period + '&dimension=ou:LEVEL-3;LEVEL-2;'+orgunits[a][1],
+                  type: 'GET',
+                  async: false,
+                  beforeSend: function(xhr) {
+                      //alert('sendingvalue');
+					   xhr.setRequestHeader('Authorization', 'Basic ' + btoa('hi4kenya2018:Kenya#2018'));
+                  },
+                  success: function(response) {
+                      if (response.rows.length != 0) {
+						  for (var t = 0; t < response.rows.length; t++) {
+							if(Math.round(response.rows[t][3])!=0){
+								//reporting=reporting+1;
+								if( response.rows[t][2]+'.REPORTING_RATE'==orgunits[a][1]+'.REPORTING_RATE'){
+									reportrate=Math.round(response.rows[t][3]);
+								}else{
+									reporting=reporting+1;
+								}
+								
+							}
+						  }
+						   
+						if(document.getElementById(orgunits[a][1]+'.reporting')){
+							if(Math.round((reporting/Math.round(orgunits[a][2]))*100)<80){
+                              for (var i = 0; i < document.getElementsByName(orgunits[a][1]).length; i++) {
+                                  document.getElementsByName(orgunits[a][1])[i].style.backgroundColor='#551a8b';
+                              }								
+							}else if(reportrate<60){
+                              for (var i = 0; i < document.getElementsByName(orgunits[a][1]).length; i++) {
+                                  document.getElementsByName(orgunits[a][1])[i].style.backgroundColor='#551a8b';
+                              }							
+							}
+							document.getElementById(orgunits[a][1]+'.weight').innerHTML =Math.round((Math.round((reporting/Math.round(orgunits[a][2]))*100)+(reportrate*3)+100)/6);
+							document.getElementById(orgunits[a][1]+'.completeness').innerHTML =100;
+							document.getElementById(orgunits[a][1]+'.REPORTING_RATE').innerHTML =reportrate;
+							document.getElementById(orgunits[a][1]+'.reporting').innerHTML =reporting;
+							document.getElementById(orgunits[a][1]+'.complete').innerHTML =reporting;
+							document.getElementById(orgunits[a][1]+'.timeliness').innerHTML = Math.round((reporting/Math.round(orgunits[a][2]))*100);
+							console.log(orgunits[a][1])	
+													
+						
+						}
+						
+                      } else {
+					  
+                      }
+                      //console.log(response);
+                      //alert(JSON.stringify(response));
+   
+                  }
+              });
+              a++;
+          }
+          document.getElementById('spinner').style.display = 'none'; 
+      });
+   // ]]>
+</script>
