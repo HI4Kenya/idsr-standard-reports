@@ -19,7 +19,7 @@ render() {
   return (
     <div className="row">
       <div className="col-12">
-      <Iframe src={this.props.src} height="1000" width="1000"/>,
+      <Iframe src={this.props.src} height="1400" width="1000"/>,
       </div>
     </div>
   )

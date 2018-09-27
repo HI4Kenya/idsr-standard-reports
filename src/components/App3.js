@@ -548,7 +548,7 @@ console.log(Wajir)
    return (
      <div>
        <div className="col-10" id="chart_section">
-       <TrendsForm/>
+       {/* <TrendsForm/> */}
             {/* <Form>
           <FormGroup>
               <Row>
