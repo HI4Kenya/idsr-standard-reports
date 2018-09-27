@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
-import $ from 'jquery';
-import {saveAs} from 'file-saver';
-import {Chart} from 'chart.js';
+//import $ from 'jquery';
+//import {saveAs} from 'file-saver';
+//import {Chart} from 'chart.js';
 import {Card,CardHeader} from 'reactstrap';
 import {Button} from 'react-bootstrap';
-import * as jsPDF from 'jspdf';
+//import * as jsPDF from 'jspdf';
 import './App.css';
 var data = {
   labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],

@@ -5,10 +5,11 @@ import { withStyles } from '@material-ui/core/styles';
 import {Drawer,AppBar,Toolbar,Divider,Typography, FormGroup} from '@material-ui/core/';
 import { Card, CardHeader, Button, Form } from 'reactstrap';
 import './App.css';
-import SideBar from './SideBar';
+//import SideBar from './SideBar';
 import {Link} from 'react-router-dom';
+import NavTabs from './NavTabs';
 
-const drawerWidth = 240;
+const drawerWidth = 0;
 
 const styles = theme => ({
 
@@ -42,6 +43,9 @@ class Dashboard extends Component{
         alert("testing");
         // <SpecificWeekReport/>
     }
+    handleChange(){
+    console.log("testing");
+    }
     render(){
         const { classes } = this.props;
         return(
@@ -60,7 +64,7 @@ class Dashboard extends Component{
                 }}   
             >
                 <div className={classes.toolbar} />
-                <SideBar/>
+                {/* <SideBar/> */}
                 <Divider />
             </Drawer>
             <main className={classes.content}>
@@ -88,7 +92,7 @@ class Dashboard extends Component{
                              <FormGroup>
                                 <div className="row">
                                    <div className="col-8">
-                                   <select className="form-control" name="wk" required>
+                                   <select className="form-control" name="wk" onChange={this.handleChange} required>
                                         <option value="">Select Week</option>
                                         <option value="2017W33">2017W33</option>
                                         <option value="2017W34">2017W34</option>
@@ -107,12 +111,11 @@ class Dashboard extends Component{
                         <div className="col-4">
                                            
                         </div>
-                    </div>
+                    </div><br/>
 
                     <div className="row">
                     <div className="col-12">
-                   
-                    {/* <SpecificWeekReport/> */}
+                   <NavTabs/>
                     </div>
                     </div>
                 </Typography>

@@ -6,9 +6,10 @@ import {Drawer,AppBar,Toolbar,Typography} from '@material-ui/core/';
 import { Card, CardBody, } from 'reactstrap';
 import './App.css';
 import NavTabs from './NavTabs';
-import SideBar from './SideBar';
+//import SideBar from './SideBar';
 
-const drawerWidth = 240;
+// const drawerWidth = 240;
+const drawerWidth = 0;
 
 const styles = theme => ({
 
@@ -38,9 +39,6 @@ const styles = theme => ({
 });
 
 function ClippedDrawer(props) {
-   
-
-
     const { classes } = props;
 
     return (
@@ -59,7 +57,7 @@ function ClippedDrawer(props) {
                 }}               
             >
                 <div className={classes.toolbar} />
-                <SideBar/>
+                {/* <SideBar/> */}
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
