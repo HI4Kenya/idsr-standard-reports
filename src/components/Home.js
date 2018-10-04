@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, { Component } from 'react';
+import logo from './logo.png';
 // import logo from './logo.svg';
 // import {Button} from '@material-ui/core';
 // import {Link} from 'react-router-dom';
@@ -20,7 +21,14 @@ class Home extends Component {
         <div className="container-fluid">
         <br/>
           <div className="container">
+          <div className="row">
+          <div className="col-12">
+            <img src={logo} alt={""}/>
+            </div>
+          </div><br/>
+
             <div className="row">
+            <div className="col-4"></div>
               <div className="col-4">
                 <Card className='card'>
                   <CardHeader

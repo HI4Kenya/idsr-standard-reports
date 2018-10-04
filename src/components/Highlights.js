@@ -20,9 +20,9 @@ const styles = theme => ({
   },
 });
 
-const titles = ["Nationally", "Malaria", "Cholera", "Dengue Fever", "Acute Malnutrition", "Rabies", "Acute Jaundice",
+const titles = [ "Malaria", "Cholera", "Dengue Fever", "Acute Malnutrition", "Rabies", "Acute Jaundice",
   "Neonatal Deaths", "Measles", "Dysentry", "Typhoid fever", "Meningococcal Meningitis", "AFP", "Neonatal Tetanus (NNT)",
-  "Guniea Worm", "Anthrax", "Influenza", "Maternal Deaths"]
+  "Guniea Worm", "Anthrax", "Maternal Deaths"]
 
 const half = Math.floor(titles.length / 2);
 
