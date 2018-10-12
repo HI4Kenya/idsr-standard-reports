@@ -9,7 +9,7 @@ import {Card,CardHeader} from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import './App.css';
 var data = {
-        labels: ["33_2017", "38_2017", "43_2017", "48_2017", "53_2017", "58_2017", "63_2017","68_2017","73_2017"],
+        labels: ["33", "38", "43", "48", "53", "58", "63","68","73"],
         datasets: [{
           label: "Reported cases*",
            borderColor: 'blue',

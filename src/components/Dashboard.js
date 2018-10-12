@@ -2,9 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {AppBar,Toolbar,Typography, FormGroup} from '@material-ui/core/';
+import {Drawer,AppBar,Toolbar,Divider,Typography, FormGroup} from '@material-ui/core/';
 import { Card, CardHeader, Button, Form } from 'reactstrap';
 import './App.css';
+//import SideBar from './SideBar';
 import {Link} from 'react-router-dom';
 import NavTabs from './NavTabs';
 
@@ -41,36 +42,8 @@ const styles = theme => ({
 class Dashboard extends Component{
     constructor(props){
         super(props)
-        this.state={choice:""},
-
-        this.state={period:[],}
+        this.state={choice:""}
     }
-
-    componentDidMount(){
-        this.fetchdata();
-    }
-    fetchdata(){
-        this.setState({
-            period:[]
-        })
-        const headers = {
-            headers: {
-                'Authorization': `Basic ${btoa('hi4kenya2018:Kenya#2018')}`
-            }
-        }
-        fetch('https://hiskenya.org/api/26/analytics.json?dimension=dx:aqtAtDtbywp;vqyFNp0Tyjj;cILf2i4484b&dimension=pe:LAST_52_WEEKS&filter=ou:HfVjCurKxh2&displayProperty=NAME&outputIdScheme=NAME', headers)
-            .then(response => response.json())
-            .then(parsedJSON => parsedJSON.dimensions.map(setPeriod => (
-                {
-
-                    periodName: `${setPeriod.pe}`
-
-                }
-            )))
-            .then(period => this.setState({ period }))
-            .catch(error => console.log('parsed error', error))
-    }
-
     // showAlert(){
     //     alert("testing");
     // }
@@ -81,7 +54,6 @@ class Dashboard extends Component{
         
     }
     render(){
-        //const { period } = this.state;
         let selection=this.state.choice;
         if(selection){
             //console.log(selection);
@@ -97,7 +69,16 @@ class Dashboard extends Component{
                     </Typography>
                 </Toolbar>
             </AppBar>
-
+            {/* <Drawer
+                variant="permanent"
+                classes={{
+                    paper: classes.drawerPaper,
+                }}   
+            >
+                <div className={classes.toolbar} />
+                <SideBar/>
+                <Divider />
+            </Drawer> */}
             <main className={classes.content}>
                 <div className={classes.toolbar} />
                 <Typography >
@@ -123,21 +104,11 @@ class Dashboard extends Component{
                                 <div className="row">
                                    <div className="col-8">
                                    <select className="form-control" id="test" name="wk" onChange={this.handleChange.bind(this)} required>
-                                        {/* {
-                                             period.map(data => {
-                                                return 
-                                                <tr>
-                                                    <td> {data.periodName}</td>
-                                            
-                                                </tr>
-                                            })
-                                        } */}
                                         <option value="">Select Week</option>
-                                        <option value="2017W33">2017W33</option>
+                                        <option value="2018W33">2018W33</option>
                                         <option value="2017W34">2017W34</option>
                                         <option value="2017W35">2017W35</option>
                                         <option value="2017W36">2017W36</option>
-                                        <option value="2017W33">2018W33</option>
                                    </select>
                                    </div> 
                                    <div className="col-4">

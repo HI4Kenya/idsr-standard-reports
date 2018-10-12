@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import {Form,FormGroup} from 'reactstrap';
 import './App.css';
 import Other from './Other';
@@ -26,6 +28,26 @@ class ReportingTrends extends Component {
     //change the state of selection
     this.setState({choice:selected})
   }
+
+    printDocument() {
+    const input = document.getElementById('Charts');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+  // orientation: 'potrait',
+  // unit: 'in',
+  // format: [20,15]
+});
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        // pdf.output('dataurlnewwindow');
+        pdf.save("Charts.pdf");
+        // pdf('p', 'mm', [297, 500])
+      })
+    ;
+  }
+
+
   render() {
     //select which one to render depending on this.state.choice
     let chart=this.state.choice;
@@ -62,6 +84,9 @@ class ReportingTrends extends Component {
     }
     return (
       <div>
+      <div className="mb5">
+        <button onClick={this.printDocument}>Export PDF</button>
+      </div>
         <div className="row">
       <Form>
         <FormGroup>
@@ -80,7 +105,9 @@ class ReportingTrends extends Component {
       {/* rendering area depending on choice */}
        
       </div>
+      <div id="Charts">
       {chart}
+      </div>
       </div>
     )
   }

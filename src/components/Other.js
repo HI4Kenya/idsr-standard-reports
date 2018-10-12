@@ -13,7 +13,8 @@ const api_host_3 = 'https://hiskenya.org/api/26/analytics.json?dimension=pe:LAST
 const styles = {
  graphContainer: {
    border: '1px solid black',
-   padding: '15px'
+   padding: '15px',
+   width:'210mm'
  }
 }
 

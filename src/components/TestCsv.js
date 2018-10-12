@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 //import {CSVLink} from 'react-csv';
 import {CSVLink} from 'react-csv';
-//import Button from 'reactstrap';
 import './App.css';
 const csvData =[
     ['firstname', 'lastname', 'email'] ,
@@ -14,7 +13,7 @@ class TestCsv extends Component {
   render() {
     return (
       <div className="row">
-      <CSVLink data={csvData} >Download Report</CSVLink>    
+      <CSVLink data={csvData} >Download me</CSVLink>    
       </div>
     )
   }
